@@ -1,0 +1,79 @@
+@import url("fonts/jgs.css");
+
+body {
+    background-color: #282828; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the container */
+    min-height: 100vh;
+    overflow: hidden; /* Hide parts that might animate off-screen */
+}
+
+.figlet-container {
+    display: flex; /* Arrange letters side-by-side */
+    align-items: flex-start; /* Align tops if heights differ */
+}
+
+.figlet-letter {
+    font-family: 'jgs9', monospace; /* Crucial Monospace font */
+    color: #fabd2f; /* Green color */
+    font-size: 1.5em; /* Adjust size as needed */
+    line-height: 1;   /* Tight lines */
+    white-space: pre; /* Handled by <pre>, but good practice */
+    margin: 0;        /* Remove default margins */
+    padding: 0;       /* Remove default padding */
+
+    /* --- Animation --- */
+    animation-name: pendulum;
+    animation-duration: 4s; /* Speed of one swing */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; /* Swing back and forth */
+
+    /* Set the origin for rotation/transform if needed (center bottom is often good for pendulum) */
+    transform-origin: center top; /* Try 'center top' or 'center center' */
+}
+
+/* Define the pendulum animation */
+@keyframes pendulum {
+    0% {
+        /* Start position: Slightly up and tilted left */
+        transform: translateY(-0.75em);
+    }
+    50% {
+        /* Middle/Lowest point: Slightly down, no tilt */
+         transform: translateY(0.75em);
+    }
+    100% {
+        /* End position: Slightly up and tilted right */
+        transform: translateY(-0.75em);
+    }
+}
+
+/* --- Stagger the Animation --- */
+/* Apply different delays to each letter using :nth-child */
+/* Adjust delays for the desired effect */
+
+.figlet-letter:nth-child(1) { /* First letter (H) */
+    animation-delay: 0s;
+}
+
+.figlet-letter:nth-child(2) { /* Second letter (I) */
+    animation-delay: -0.2s; /* Starts slightly later in the cycle */
+}
+
+.figlet-letter:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.figlet-letter:nth-child(4) {
+    animation-delay: -0.6s;
+}
+
+.figlet-letter:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+.figlet-letter:nth-child(6) {
+    animation-delay: -1.0s;
+}
