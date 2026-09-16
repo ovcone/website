@@ -1,0 +1,55 @@
+base_url = "https://ovc.one"
+title = "ovcotic"
+description = "Party like it's 2018"
+taxonomies = [
+    {name = "tags"},
+    {name = "categories"},
+    {name = "authors"},
+]
+feed_filenames = ["rss.xml"]
+default_language = "ru"
+theme = "terminus"
+compile_sass = true
+minify_html = true
+generate_feeds = true
+exclude_paginated_pages_in_sitemap = "all"
+author = "ovcone"
+build_search_index = true
+
+[markdown]
+render_emoji = true
+external_links_target_blank = true
+smart_punctuation = true
+lazy_async_image = true
+bottom_footnotes = true
+github_alerts = true
+insert_anchor_links = "right"
+
+[markdown.highlighting]
+error_on_missing_language = true
+style = "inline"
+theme = "catppuccin-mocha"
+
+[extra]
+close_responsive_menu_on_resize = true
+color_scheme = "blinding"
+copy_button = true
+copyright = "© $YEAR $AUTHOR"
+favicon = "images/favicon.png"
+katex = true
+layout = "center"
+show_default_author = false
+
+socials = [
+    { name = "email", url = "mailto:me@ovc.one" },
+    { name = "github", url = "https://github.com/ovcone" },
+    { name = "telegram", url = "https://ovcone.t.me" }
+]
+
+[extra.content_security_policy]
+enable = true
+allowed_domains = []
+
+[extra.responsive_images]
+widths = [640, 784, 1280, 1920, 2560]
+fallback_width = 1280
