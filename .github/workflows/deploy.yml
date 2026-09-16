@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Generate JXL and AVIF images
@@ -42,7 +42,6 @@ jobs:
             cjxl \
               --progressive \
               --quality 95 \
-              --alpha_distance=0 \
               --effort 7 \
               --num_threads=-1 \
               "$png" "$tmp_jxl"
