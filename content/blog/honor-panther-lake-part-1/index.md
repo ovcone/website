@@ -17,7 +17,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916215828.jxl" type="image/jxl">
     <source srcset="20260916215828.avif" type="image/avif">
-    <img src="20260916215828.avif" decoding="async" loading="lazy">
+    <img src="20260916215828.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://prophotos.ru/reviews/24794-apple-macbook-pro-14-m5-2025-review">
@@ -40,7 +40,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916215959.jxl" type="image/jxl">
     <source srcset="20260916215959.avif" type="image/avif">
-    <img src="20260916215959.avif" decoding="async" loading="lazy">
+    <img src="20260916215959.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://devtalk.blender.org/uploads/default/original/3X/0/d/0d1d684ab8e8c6cb17e713cefe67a14ecb6c42d4.jpeg">
@@ -53,7 +53,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220113.jxl" type="image/jxl">
     <source srcset="20260916220113.avif" type="image/avif">
-    <img src="20260916220113.avif" decoding="async" loading="lazy">
+    <img src="20260916220113.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://www.apple.com/uk/newsroom/2024/11/final-cut-pro-11-begins-a-new-chapter-for-video-editing-on-mac/">
@@ -73,7 +73,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220202.jxl" type="image/jxl">
     <source srcset="20260916220202.avif" type="image/avif">
-    <img src="20260916220202.avif" decoding="async" loading="lazy">
+    <img src="20260916220202.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://pbs.twimg.com/media/ETkyWy-U0AArr55.png">
@@ -89,7 +89,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220331.jxl" type="image/jxl">
     <source srcset="20260916220331.avif" type="image/avif">
-    <img src="20260916220331.avif" decoding="async" loading="lazy">
+    <img src="20260916220331.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://programmerhumor.io/memes/out-of-memory">
@@ -108,7 +108,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220509.jxl" type="image/jxl">
     <source srcset="20260916220509.avif" type="image/avif">
-    <img src="20260916220509.avif" decoding="async" loading="lazy">
+    <img src="20260916220509.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://pikabu.ru/story/intel_vs_amd_5930022">
@@ -125,7 +125,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220735.jxl" type="image/jxl">
     <source srcset="20260916220735.avif" type="image/avif">
-    <img src="20260916220735.avif" decoding="async" loading="lazy">
+    <img src="20260916220735.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://www.pugetsystems.com/labs/articles/intel-12th-gen-how-do-p-cores-and-e-cores-compare-2289/">
@@ -146,7 +146,7 @@ tags = ["apple", "it"]
   <picture>
     <source srcset="20260916220850.jxl" type="image/jxl">
     <source srcset="20260916220850.avif" type="image/avif">
-    <img src="20260916220850.avif" decoding="async" loading="lazy">
+    <img src="20260916220850.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://frame.work/blog/introducing-framework-laptop-13-pro">
@@ -161,7 +161,7 @@ Framework известна как компания, производящая п�
   <picture>
     <source srcset="20260916220954.jxl" type="image/jxl">
     <source srcset="20260916220954.avif" type="image/avif">
-    <img src="20260916220954.avif" decoding="async" loading="lazy">
+    <img src="20260916220954.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://www.businessinsider.com/steve-jobs-touch-screen-mac-2010-10">
@@ -178,7 +178,7 @@ Framework известна как компания, производящая п�
   <picture>
     <source srcset="20260916221059.jxl" type="image/jxl">
     <source srcset="20260916221059.avif" type="image/avif">
-    <img src="20260916221059.avif" decoding="async" loading="lazy">
+    <img src="20260916221059.jpg" decoding="async" loading="lazy">
   </picture>
 </figure>
 
@@ -190,7 +190,7 @@ Framework известна как компания, производящая п�
   <picture>
     <source srcset="20260916221351.jxl" type="image/jxl">
     <source srcset="20260916221351.avif" type="image/avif">
-    <img src="20260916221351.avif" decoding="async" loading="lazy">
+    <img src="20260916221351.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://www.dns-shop.ru/product/fa3563545423d582/146-noutbuk-honor-magicbook-pro-14-5211t-seryj/">
@@ -219,7 +219,7 @@ Framework известна как компания, производящая п�
   <picture>
     <source srcset="20260916221641.jxl" type="image/jxl">
     <source srcset="20260916221641.avif" type="image/avif">
-    <img src="20260916221641.avif" decoding="async" loading="lazy">
+    <img src="20260916221641.jpg" decoding="async" loading="lazy">
   </picture>
   <figcaption>
     <a href="https://www.reddit.com/r/thinkpad/comments/d5euuk/nothing_can_break_thinkpads/">

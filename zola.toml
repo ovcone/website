@@ -40,6 +40,9 @@ katex = true
 layout = "center"
 show_default_author = false
 
+[extra.telegram]
+channel_username = "ovcotic"
+
 socials = [
     { name = "email", url = "mailto:me@ovc.one" },
     { name = "github", url = "https://github.com/ovcone" },
@@ -48,7 +51,11 @@ socials = [
 
 [extra.content_security_policy]
 enable = true
-allowed_domains = []
+allowed_domains = [
+    { directive = "script-src", domains = ["'self'", "https://telegram.org"] },
+    { directive = "frame-src", domains = ["https://t.me"] },
+]
+
 
 [extra.responsive_images]
 widths = [640, 784, 1280, 1920, 2560]
