@@ -8,8 +8,9 @@ taxonomies = [
 ]
 feed_filenames = ["rss.xml"]
 default_language = "ru"
-theme = "terminus"
-compile_sass = true
+# Initialize both theme and component submodules with git submodule update --init --recursive.
+theme = "ovcozola"
+compile_sass = false
 minify_html = true
 generate_feeds = true
 exclude_paginated_pages_in_sitemap = "all"
@@ -32,7 +33,7 @@ theme = "catppuccin-mocha"
 
 [extra]
 close_responsive_menu_on_resize = true
-color_scheme = "blinding"
+color_scheme = "red"
 copy_button = true
 copyright = "© $YEAR $AUTHOR"
 favicon = "images/favicon.png"
