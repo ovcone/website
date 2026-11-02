@@ -32,42 +32,78 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes libjxl-tools libavif-bin imagemagick
 
-          find content -type f -iname '*.png' -print0 |
-          while IFS= read -r -d '' png; do
-            stem="${png%.*}"
-            jxl="${stem}.jxl"
-            avif="${stem}.avif"
-            jpg="${stem}.jpg"
+          mapfile -d '' -t sources < <(
+            find content -type f \
+              \( -iname '*.png' \
+                 -o -iname '*.jpg' \
+                 -o -iname '*.jpeg' \
+                 -o -iname '*.webp' \) \
+              -print0
+          )
 
-            tmp_jxl="${jxl}.tmp"
-            tmp_avif="${avif}.tmp"
-            tmp_jpg="${jpg}.tmp"
+          for src in "${sources[@]}"; do
+            (
+              stem="${src%.*}"
+              jxl="${stem}.jxl"
+              avif="${stem}.avif"
+              jpg="${stem}.jpg"
 
-            echo "Converting: $png"
+              for out in "$jxl" "$avif" "$jpg"; do
+                if [[ "$out" != "$src" && ( -e "$out" || -L "$out" ) ]]; then
+                  printf 'Refusing to overwrite: %s\n' "$out" >&2
+                  exit 1
+                fi
+              done
 
-            cjxl \
-              --progressive \
-              --quality 95 \
-              --effort 7 \
-              --num_threads=-1 \
-              "$png" "$tmp_jxl"
+              work=$(mktemp -d "${src%/*}/.convert.XXXXXX")
+              trap 'rm -rf -- "$work"' EXIT
 
-            avifenc \
-              --progressive \
-              --qcolor 95 \
-              --qalpha 100 \
-              --yuv 444 \
-              --speed 4 \
-              --jobs all \
-              "$png" "$tmp_avif"
+              printf 'Converting: %s\n' "$src"
 
-            magick "$png" -quality 100 "jpeg:${tmp_jpg}"
+              input="$src"
+              ext="${src##*.}"
 
-            mv -- "$tmp_jxl" "$jxl"
-            mv -- "$tmp_avif" "$avif"
-            mv -- "$tmp_jpg" "$jpg"
-            rm -- "$png"
+              if [[ "${ext,,}" == webp ]]; then
+                "$imagemagick" "${src}[0]" "$work/input.png"
+                input="$work/input.png"
+              fi
+
+              cjxl \
+                --progressive \
+                --quality 95 \
+                --lossless_jpeg=0 \
+                --effort 7 \
+                --num_threads=-1 \
+                "$input" "$work/output.jxl"
+
+              avifenc \
+                --progressive \
+                --qcolor 95 \
+                --qalpha 100 \
+                --yuv 444 \
+                --speed 4 \
+                --jobs all \
+                "$input" "$work/output.avif"
+
+              case "${ext,,}" in
+                jpg|jpeg)
+                  cp -- "$src" "$work/output.jpg"
+                  ;;
+                *)
+                  "$imagemagick" "$input" -quality 100 "jpeg:$work/output.jpg"
+                  ;;
+              esac
+
+              mv -- "$work/output.jxl" "$jxl"
+              mv -- "$work/output.avif" "$avif"
+              mv -- "$work/output.jpg" "$jpg"
+
+              if [[ "$src" != "$jpg" ]]; then
+                rm -- "$src"
+              fi
+            )
           done
+
 
       - name: Build Zola + upload Pages artifact
         uses: getzola/github-pages@435a833fd3f1edcb28d70576c89e30a6365cd8f7 # v1
