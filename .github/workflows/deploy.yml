@@ -64,7 +64,7 @@ jobs:
               ext="${src##*.}"
 
               if [[ "${ext,,}" == webp ]]; then
-                "$imagemagick" "${src}[0]" "$work/input.png"
+                "magick" "${src}[0]" "$work/input.png"
                 input="$work/input.png"
               fi
 
@@ -90,7 +90,7 @@ jobs:
                   cp -- "$src" "$work/output.jpg"
                   ;;
                 *)
-                  "$imagemagick" "$input" -quality 100 "jpeg:$work/output.jpg"
+                  "magick" "$input" -quality 100 "jpeg:$work/output.jpg"
                   ;;
               esac
 
